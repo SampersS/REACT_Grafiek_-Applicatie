@@ -58,12 +58,12 @@ function Genereer() {
           let o = b.dagGroep.split('-')
           let m = o[0] * 12 + o[1]
           if (laatst != m) {
-            newArr.add({ "dagGroep": m, "swnb": 0, "sknt": 0 })
+            newArr.push({ "dagGroep": m, "swnb": 0, "sknt": 0 })
             laatst = m
           }
           let lengte = newArr.length
-          newArr[lengte].swnb += b.swnb
-          newArr[lengte].sknt += b.sknt
+          newArr[lengte - 1].swnb += b.swnb
+          newArr[lengte - 1].sknt += b.sknt
         });
         setChartData(newArr)
       } else {
